@@ -1,6 +1,6 @@
 #include "Bot4.h"
 
-Bot4::Bot4()
+Bot4::Bot4(Field& field)
 {
 }
 

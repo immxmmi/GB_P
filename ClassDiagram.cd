@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Bot">
-    <Position X="5" Y="0.5" Width="1.5" />
+    <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAACAQAAAACAAAAIAABAAAIEAACAAABgAAAAAAA=</HashCode>
       <FileName>Bot.h</FileName>
@@ -43,28 +43,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Field">
-    <Position X="9.75" Y="0.75" Width="1.5" />
+    <Position X="7.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAABAACCAAAAAAAAAAAEAAAEAAAAAAAAAAAAAACgAA=</HashCode>
       <FileName>Field.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GAME">
-    <Position X="13.5" Y="1.25" Width="1.5" />
+    <Position X="3.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAiAABAEAAAAAAAAAAAAAAAAgAAgAAAACAEAAAAA=</HashCode>
       <FileName>GAME.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UnitTest">
-    <Position X="7.75" Y="0.75" Width="1.5" />
+    <Position X="1.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACCCQAAAABAAAQAAAQAAAgAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>UnitTest.h</FileName>
     </TypeIdentifier>
   </Class>
   <Typedef Name="vector3D" Collapsed="true">
-    <Position X="13.25" Y="5.25" Width="1.5" />
+    <Position X="9.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Field.h</FileName>

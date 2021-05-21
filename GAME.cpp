@@ -53,10 +53,10 @@ void GAME::choose_BOT(bool TEST)
 	Field field;
 	do{
 			Bot1* bot_1 = new Bot1(field);
-			Bot2* bot_2 = new Bot2();
-			Bot3* bot_3 = new Bot3();
-			Bot4* bot_4 = new Bot4();
-			Bot5* bot_5 = new Bot5();
+			Bot2* bot_2 = new Bot2(field);
+			Bot3* bot_3 = new Bot3(field);
+			Bot4* bot_4 = new Bot4(field);
+			Bot5* bot_5 = new Bot5(field);
 
 
 

@@ -2,6 +2,10 @@
 #include <assert.h>
 #include "Field.h"
 #include "Bot1.h"
+#include "Bot2.h"
+#include "Bot3.h"
+#include "Bot4.h"
+#include "Bot5.h"
 #include "GAME.h"
 #include <iostream>
 void UnitTest::TEST_FIELD(){
@@ -106,7 +110,9 @@ void UnitTest::TEST_FIELD(){
 	std::cout << std::endl << "DELETE OBJEKTS" << std::endl;
 	testField->~Field();
 	delete(testField);
-	std::cout << std::endl << "FIELD CHECK SUCCESS 0 ERROR"<<std::endl << std::endl << std::endl;
+	std::cout << std::endl << "FIELD CHECK SUCCESS 0 ERROR" << std::endl;
+	std::cout << "_________________________________________________________________" << std::endl << std::endl << std::endl;
+
 }
 
 void UnitTest::TEST_BOT()
@@ -116,13 +122,17 @@ void UnitTest::TEST_BOT()
 	std::cout << ".....create TEST Field" << std::endl;
 	Field testField;
 	std::cout << ".....create TEST BOT" << std::endl;
-	Bot1* testBot = new Bot1(testField);
+	Bot1* testBot1 = new Bot1(testField);
+	Bot2* testBot2 = new Bot2(testField);
+	Bot3* testBot3 = new Bot3(testField);
+	Bot4* testBot4 = new Bot4(testField);
+	Bot5* testBot5 = new Bot5(testField);
 
 
 	//NAV == TRUE
-	assert(testBot->x == 0 && "START X --> VALUE");
+	assert(testBot1->x == 0 && "START X --> VALUE");
 	std::cout << "--> true" << std::endl;
-	assert(testBot->y == 0 && "START Y--> VALUE");
+	assert(testBot1->y == 0 && "START Y--> VALUE");
 	std::cout << "--> true" << std::endl;
 
 
@@ -130,9 +140,18 @@ void UnitTest::TEST_BOT()
 	// DELETE
 	std::cout << std::endl << "DELETE OBJEKTS" << std::endl;
 	testField.~Field();
-	testBot->~Bot1();
-	delete(testBot);
-	std::cout << std::endl << "BOT CHECK SUCCESS 0 ERROR" << std::endl << std::endl << std::endl;
+	testBot1->~Bot1();
+	testBot2->~Bot2();
+	testBot3->~Bot3();
+	testBot4->~Bot4();
+	testBot5->~Bot5();
+	delete(testBot1);
+	delete(testBot2);
+	delete(testBot3);
+	delete(testBot4);
+	delete(testBot5);
+	std::cout << std::endl << "BOT CHECK SUCCESS 0 ERROR" << std::endl;
+	std::cout << "_________________________________________________________________"<< std::endl << std::endl << std::endl;
 }
 
 void UnitTest::TEST_GAME()
@@ -160,15 +179,15 @@ void UnitTest::TEST_GAME()
 	std::cout << "--> true" << std::endl;
 	assert(testGAME->BOT_COUNTER == 5 && "BOTS --> CREATE ");
 	std::cout << "--> true" << std::endl;
-	std::cout << std::endl << "CREATE 5 BOTS SUCCESSFUL" << std::endl << std::endl << std::endl;
-
-
+	std::cout << std::endl << "CREATE 5 BOTS SUCCESSFUL" << std::endl;
 
 	// DELETE
 	std::cout << std::endl << "DELETE OBJEKTS" << std::endl;
 	testGAME->~GAME();
 	delete(testGAME);
 	std::cout << std::endl << "BOT CHECK SUCCESS 0 ERROR" << std::endl;
+	std::cout << "_________________________________________________________________" << std::endl << std::endl << std::endl;
+
 
 }
 

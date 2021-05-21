@@ -1,6 +1,6 @@
 #include "Bot3.h"
 
-Bot3::Bot3()
+Bot3::Bot3(Field& field)
 {
 }
 

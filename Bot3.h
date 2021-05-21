@@ -6,7 +6,7 @@ class Bot3 :
 private:
 protected:
 public:
-    Bot3();
+    Bot3(Field& field);
     ~Bot3();
     void mining(Field& field);
 };
