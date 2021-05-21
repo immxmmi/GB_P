@@ -12,18 +12,20 @@ private:
 
 
 protected:
-	int x;
-	int y;
-	int score;
-	std:: string name;
-	int attack(int power);
 
 public:
 	Bot();
 	~Bot();
+	int score;
+
+	int x;
+	int y;
+	std:: string name;
+	int attack(int power);
 
 	void setXY(int x, int y);
 	void move();
+	void collect(Field& field);
 	virtual void mining(Field& field) = 0;
 	int rand1_4();
 };

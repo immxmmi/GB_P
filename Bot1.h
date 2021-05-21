@@ -8,9 +8,10 @@ class Bot1 :
 {
 
 private:
-protected:
-public:
 
+protected:
+
+public:
     Bot1(Field& field);
     ~Bot1();
     void mining(Field& field);

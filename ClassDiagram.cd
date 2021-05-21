@@ -1,70 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Bot">
-    <Position X="5" Y="1" Width="1.5" />
+    <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAQAAAACAAAAAAAFAAAIEAACAAABgAAAAAAA=</HashCode>
+      <HashCode>AAgAAAACAQAAAACAAAAIAABAAAIEAACAAABgAAAAAAA=</HashCode>
       <FileName>Bot.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Bot1" Collapsed="true">
-    <Position X="9.5" Y="5" Width="1.5" />
+  <Class Name="Bot1">
+    <Position X="9.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAEAAIAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Bot1.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Bot2" Collapsed="true">
-    <Position X="5" Y="5" Width="1.5" />
+  <Class Name="Bot2">
+    <Position X="5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Bot2.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Bot3" Collapsed="true">
-    <Position X="7.25" Y="5" Width="1.5" />
+  <Class Name="Bot3">
+    <Position X="7.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Bot3.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Bot4" Collapsed="true">
-    <Position X="2.75" Y="5" Width="1.5" />
+  <Class Name="Bot4">
+    <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAABAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Bot4.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Bot5" Collapsed="true">
-    <Position X="0.5" Y="5" Width="1.5" />
+  <Class Name="Bot5">
+    <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAIAAAAAAAA=</HashCode>
       <FileName>Bot5.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Field" Collapsed="true">
-    <Position X="12" Y="1" Width="1.5" />
+  <Class Name="Field">
+    <Position X="9.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAACAAAAAAAAAAAEAAAEAAAAAAAAAAAAAACgAA=</HashCode>
+      <HashCode>CAAABAACCAAAAAAAAAAAEAAAEAAAAAAAAAAAAAACgAA=</HashCode>
       <FileName>Field.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GAME" Collapsed="true">
-    <Position X="13.75" Y="1" Width="1.5" />
+  <Class Name="GAME">
+    <Position X="13.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>GAME.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="UnitTest" Collapsed="true">
-    <Position X="12" Y="2" Width="1.5" />
+  <Class Name="UnitTest">
+    <Position X="7.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACCCQAAAABAAAQAAAAAAAgAAAAAAgAAAAAIAAA=</HashCode>
+      <HashCode>AAAAAACCCQAAAABAAAQAAAQAAAgAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>UnitTest.h</FileName>
     </TypeIdentifier>
   </Class>
   <Typedef Name="vector3D" Collapsed="true">
-    <Position X="12" Y="3.25" Width="1.5" />
+    <Position X="13.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Field.h</FileName>

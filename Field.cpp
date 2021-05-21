@@ -4,7 +4,7 @@
 Field::Field()
 {
     this->mine = vector3D(5);
-    setFullField(true);
+    setFullField(false);
 }
 
 
