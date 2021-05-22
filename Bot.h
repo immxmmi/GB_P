@@ -17,6 +17,7 @@ public:
 	Bot();
 	~Bot();
 	int score;
+	long long time;
 
 	int x;
 	int y;
@@ -25,8 +26,10 @@ public:
 
 	void setXY(int x, int y);
 	void move();
-	void collect(Field& field);
 	virtual void mining(Field& field) = 0;
+	void play(Field& field);
+	virtual void collect(Field& field);
 	int rand1_4();
+	int rand1_5();
 };
 

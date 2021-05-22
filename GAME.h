@@ -5,11 +5,12 @@
 class GAME
 {
 private:
+	int LIMIT;
 protected:
 public:
 	int BOT_COUNTER;
 	static Bot* BOTS[5];
-
+	
 
 	void playGame();
 	void GAME_BOT();

@@ -13,10 +13,14 @@ private:
 	int rand1_9();
 	int rand1_10();
 	int rand1_15();
+	int counter;
 protected:
 
 public:
-	void TEST_FIELD(); 
+	UnitTest();
+	~UnitTest();
+	void TEST_UNITTEST();
+	void TEST_FIELD();
 	void TEST_BOT(); 
 	void TEST_GAME();
 

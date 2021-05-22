@@ -20,10 +20,11 @@ public:
 	~Field();
 	// Feld Generieren 3D
 	void setFullField(bool Test);
+	// ZEICHNET DIE GANZEN FELDER AUF
 	void drawField();
 	//Feld einfügen an einer Bestimmten stelle
 	void setField(int x, int y, int z, int value);
-	//Zufalls Zahlen von 1-9
+	//Zufalls Zahlen von 1-9 
 	int rand1_9();
 
 };

@@ -1,8 +1,8 @@
 #include "Bot1.h"
-Bot1::Bot1(Field& field) {
-    //this->setXY(this->rand1_4(),this->rand1_4());
-    this->setXY(0,0);
-    this->score = 0;
+#include <algorithm>
+#include <iostream>
+Bot1::Bot1() {
+    this->name = "BOT1";
 }
 
 Bot1::~Bot1() {

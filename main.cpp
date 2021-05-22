@@ -7,21 +7,27 @@
 
 
 int main() {
-	//
-	//
 	UnitTest test;
-	Field field;
-	//
-	Bot1 bot(field);
+	GAME game;
 
-	//GAME game;
-	//game.choose_BOT();
 
+
+	//game.playGame();
+	test.TEST_UNITTEST();
 	test.TEST_FIELD();
 	test.TEST_BOT();
 	test.TEST_GAME();
 
-	//test.TEST_FIELD();
+	//game.choose_BOT(false);
+	
+	//field.drawField();
+	//std::cout << "Anzahl: " << field.sum << "/" << bot.score<< std::endl;
+	//bot.play(field,200);
+	//std::cout << "Anzahl: " << field.sum << "/" << bot.score << std::endl;
+	//field.drawField();
+	//std::cout << "Anzahl: " << field.sum << "/" << bot.score << std::endl;
+
+
 
 	
 	return 0;
