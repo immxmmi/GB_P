@@ -9,29 +9,27 @@ class Bot
 {
 
 private:
-
-
+	long long time;
 protected:
+	void setXY(int x, int y);
+	int rand1_4();
+	int rand1_5();
+	void move();
+	int x;
+	int y;
 
 public:
 	Bot();
 	~Bot();
+
 	int score;
-	long long time;
-
-	int x;
-	int y;
 	std:: string name;
-	int attack(int power);
-
-	void setXY(int x, int y);
-	void move();
-	virtual void mining(Field& field) = 0;
+	int getScore();
+	long long getTime();
 	void play(Field& field);
-	virtual void collect(Field& field);
-	int rand1_4();
-	int rand1_5();
 
+	virtual void mining(Field& field) = 0;
+    void collect(Field& field);
 	friend class UnitTest;
 };
 

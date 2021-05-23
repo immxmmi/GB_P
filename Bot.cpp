@@ -5,17 +5,11 @@
 std::mutex miningX;
 
 
-int Bot::attack(int power)
-{
-	return power;
-}
-
 Bot::Bot() {
 	this->setXY(this->rand1_5(), this->rand1_5());
 	this->time = 0;
 	this->score = 0;
 }
-
 Bot::~Bot() {
 }
 
@@ -30,6 +24,15 @@ void Bot::collect(Field& field) {
 		field.mine[this->x][this->y][z] = 0;
 	}
 }
+int Bot::getScore()
+{
+	return this->score;
+}
+long long Bot::getTime()
+{
+	return this->time;
+}
+
 void Bot::play(Field& field) {
 	auto start = std::chrono::high_resolution_clock::now();
 	while (field.sum)
@@ -40,8 +43,6 @@ void Bot::play(Field& field) {
 	auto stop = std::chrono::high_resolution_clock::now();
 	this->time = std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count();
 }
-
-
 void Bot::move() {
 	this->x = this->rand1_5();
 	this->y = this->rand1_5();

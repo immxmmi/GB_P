@@ -14,11 +14,11 @@ int main() {
 
 
 
-	//game.playGame();
-	//test.TEST_UNITTEST();
+	game.playGame();
+	test.TEST_UNITTEST();
 	test.TEST_FIELD();
-	//test.TEST_BOT();
-	//test.TEST_GAME();
+	test.TEST_BOT();
+	test.TEST_GAME();
 
 	//game.choose_BOT(false);
 	
@@ -29,7 +29,6 @@ int main() {
 	//field.drawField();
 	//std::cout << "Anzahl: " << field.sum << "/" << bot.score << std::endl;
 
-	Bot2 sort;
 
 
 	//field.drawField(true);

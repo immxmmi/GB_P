@@ -23,6 +23,8 @@ public:
 	void TEST_FIELD();
 	void TEST_BOT(); 
 	void TEST_GAME();
+	void TEST();
+
 
 };
 

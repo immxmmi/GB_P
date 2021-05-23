@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <iostream>
 Bot1::Bot1() {
-    this->name = "SORT_BOT2000";
+    this->name = "SORT_BOT_2000";
 }
 
 Bot1::~Bot1() {

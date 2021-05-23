@@ -112,31 +112,16 @@ void UnitTest::TEST_FIELD(){
 
 	//RANDOM TEST
 	std::cout << std::endl << "RANDOM: " << std::endl;
-	assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] >= 0 && "Vector TEST Feld X/Y/Z");
-	std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] <10 && "Vector TEST Feld X/Y/Z");
-	std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
-	this->counter++;
 
-	assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] >= 0 && "Vector TEST Feld X/Y/Z");
-	std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] < 10 && "Vector TEST Feld X/Y/Z");
-	std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] >= 0 && "Vector TEST Feld X/Y/Z");
-	std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] < 10 && "Vector TEST Feld X/Y/Z");
-	std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] >= 0 && "Vector TEST Feld X/Y/Z");
-	std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] < 10 && "Vector TEST Feld X/Y/Z");
-	std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
-	this->counter++;
+	for (int i = 0; i < 6; i++) {
+		assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] >= 0 && "Vector TEST Feld X/Y/Z");
+		std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
+		this->counter++;
+		assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] < 10 && "Vector TEST Feld X/Y/Z");
+		std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
+		this->counter++;
+	}
+
 
 
 	// MAX TEST
@@ -165,25 +150,16 @@ void UnitTest::TEST_FIELD(){
 
 	// TEST ZufallsZahlen
 	std::cout<< std::endl << "TEST RANDOM NUMBER 1-9:" << std::endl;
-	assert(testField->rand1_9() < 10 && "random Zahl ist größer als 9");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->rand1_9() < 10 && "random Zahl ist größer als 9");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->rand1_9() < 10 && "random Zahl ist größer als 9");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->rand1_9() >= 0 && "ransetFullField(true);dom Zahl ist kleiner als 0");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->rand1_9() >= 0 && "random Zahl ist kleiner als 0");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->rand1_9() >= 0 && "random Zahl ist kleiner als 0");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
 
+
+	for (int i = 0; i < 3; i++) {
+		assert(testField->rand1_9() < 10 && "random Zahl ist größer als 9");
+		std::cout << "--> true" << std::endl;
+		this->counter++;
+		assert(testField->rand1_9() >= 0 && "random Zahl ist kleiner als 0");
+		std::cout << "--> true" << std::endl;
+		this->counter++;
+	}
 
 	//SUM TEST
 	std::cout << "SUM -- SCORE TEST" <<std::endl;
@@ -192,29 +168,15 @@ void UnitTest::TEST_FIELD(){
 	std::cout << "--> true" << std::endl;
 	this->counter++;
 
-	testField->setFullField(false);
-	assert(testField->sum < 2251 && "SUMME ist größer als das MAXIMUM");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->sum >= 0 && "SUMME ist kleiner als NULL");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-
-	testField->setFullField(false);
-	assert(testField->sum < 2251 && "SUMME ist größer als das MAXIMUM");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->sum >= 0 && "SUMME ist kleiner als NULL");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-
-	testField->setFullField(false);
-	assert(testField->sum < 2251 && "SUMME ist größer als das MAXIMUM");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testField->sum >= 0 && "SUMME ist kleiner als NULL");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
+	for (int i = 0; i < 3; i++) {
+		testField->setFullField(false);
+		assert(testField->sum < 2251 && "SUMME ist größer als das MAXIMUM");
+		std::cout << "--> true" << std::endl;
+		this->counter++;
+		assert(testField->sum >= 0 && "SUMME ist kleiner als NULL");
+		std::cout << "--> true" << std::endl;
+		this->counter++;
+	}
 
 	// DELETE
 	std::cout << std::endl << "DELETE OBJEKTS" << std::endl;
@@ -230,7 +192,6 @@ void UnitTest::TEST_BOT()
 	std::cout << "TEST_BOT :  " << std::endl;
 	std::cout << ".....create TEST Field" << std::endl;
 	Field testField;
-
 
 
 	std::cout << ".....create TEST BOT1" << std::endl;
@@ -299,7 +260,7 @@ void UnitTest::TEST_BOT()
 	this->counter++;
 
 	std::cout << "TEST XY" << std::endl;
-	assert(testBot2->x > 0 && "START X --> VALUE");
+	assert(testBot2->x >= 0 && "START X --> VALUE");
 	std::cout << "--> true" << std::endl;
 	this->counter++;
 
@@ -307,8 +268,7 @@ void UnitTest::TEST_BOT()
 	std::cout << "--> true" << std::endl;
 	this->counter++;
 
-
-	assert(testBot2->y > 0 && "START Y--> VALUE");
+	assert(testBot2->y >= 0 && "START Y--> VALUE");
 	std::cout << "--> true" << std::endl;
 	this->counter++;
 	assert(testBot2->y < 5 && "START Y--> VALUE");
@@ -326,12 +286,6 @@ void UnitTest::TEST_BOT()
 
 
 
-
-
-
-
-
-
 	std::cout << ".....create TEST BOT3" << std::endl;
 	Bot3* testBot3 = new Bot3();
 	std::cout << "STATUS CHECK BOT 3" << std::endl;
@@ -340,7 +294,7 @@ void UnitTest::TEST_BOT()
 	this->counter++;
 
 	std::cout << "TEST XY" << std::endl;
-	assert(testBot3->x > 0 && "START X --> VALUE");
+	assert(testBot3->x >= 0 && "START X --> VALUE");
 	std::cout << "--> true" << std::endl;
 	this->counter++;
 
@@ -349,7 +303,7 @@ void UnitTest::TEST_BOT()
 	this->counter++;
 
 
-	assert(testBot3->y > 0 && "START Y--> VALUE");
+	assert(testBot3->y >= 0 && "START Y--> VALUE");
 	std::cout << "--> true" << std::endl;
 	this->counter++;
 	assert(testBot3->y < 5 && "START Y--> VALUE");
@@ -366,11 +320,6 @@ void UnitTest::TEST_BOT()
 	this->counter++;
 
 
-
-
-
-
-	
 	std::cout << ".....create TEST BOT4" << std::endl;
 	Bot4* testBot4 = new Bot4();
 	std::cout << "STATUS CHECK BOT 4" << std::endl;
@@ -388,7 +337,7 @@ void UnitTest::TEST_BOT()
 	this->counter++;
 
 
-	assert(testBot4->y > 0 && "START Y--> VALUE");
+	assert(testBot4->y >= 0 && "START Y--> VALUE");
 	std::cout << "--> true" << std::endl;
 	this->counter++;
 	assert(testBot4->y < 5 && "START Y--> VALUE");
@@ -405,8 +354,6 @@ void UnitTest::TEST_BOT()
 	this->counter++;
 
 
-
-	
 	std::cout << ".....create TEST BOT5" << std::endl;
 	Bot5* testBot5 = new Bot5();
 	std::cout << "STATUS CHECK BOT 5" << std::endl;
@@ -441,9 +388,6 @@ void UnitTest::TEST_BOT()
 	this->counter++;
 
 
-
-
-
 	// DELETE
 	std::cout << std::endl << "DELETE OBJEKTS" << std::endl;
 	testField.~Field();
@@ -475,24 +419,12 @@ void UnitTest::TEST_GAME()
 	this->counter++;
 	std::cout << std::endl << "CREATE 5 BOTS" << std::endl;
 	testGAME->choose_BOT(true);
-	assert(testGAME->BOTS[0] != nullptr && "BOTS --> CREATE");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testGAME->BOTS[1] != nullptr && "BOTS --> CREATE ");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testGAME->BOTS[2] != nullptr && "BOTS --> CREATE ");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testGAME->BOTS[3] != nullptr && "BOTS --> CREATE ");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testGAME->BOTS[4] != nullptr && "BOTS --> CREATE ");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
-	assert(testGAME->BOT_COUNTER == 5 && "BOTS --> CREATE ");
-	std::cout << "--> true" << std::endl;
-	this->counter++;
+	for (int i = 0; i < 5; i++) {
+
+		assert(testGAME->BOTS[i] != nullptr && "BOTS --> CREATE");
+		std::cout << "--> true" << std::endl;
+		this->counter++;
+	}
 	std::cout << std::endl << "CREATE 5 BOTS SUCCESSFUL" << std::endl;
 
 	// DELETE
@@ -503,6 +435,14 @@ void UnitTest::TEST_GAME()
 	std::cout << "_________________________________________________________________" << std::endl << std::endl << std::endl;
 
 	this->counter = 0;
+}
+
+void UnitTest::TEST()
+{
+	this->TEST_UNITTEST();
+	this->TEST_BOT();
+	this->TEST_FIELD();
+	this->TEST_GAME();
 }
 
 
