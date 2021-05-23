@@ -1,6 +1,7 @@
 #include "Field.h"
 #include <iostream>
 
+
 Field::Field()
 {
     this->mine = vector3D(5);
@@ -13,23 +14,57 @@ Field::~Field()
 
 
 //UNIT CHECK 
-void Field::drawField()
+void Field::drawField(bool TEST)
 {
-    for (unsigned int z = 0; z < 10; z++) {
-        std::cout << "EBENE" << z+1 << std::endl;
-        for (unsigned int y = 0; y < mine.size(); y++) {
-             for (unsigned int x = 0; x < mine.size(); x++) {
-                   std::cout << this->mine[x][y][z];
-             }
-             std::cout << std::endl;
+
+    if (TEST) {
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "                  ____________________________________________________________________________";
+        std::cout << std::endl;
+       // std::cout << "                   |00|01|02|03|04|10|11|12|13|14|20|21|22|23|24|30|31|32|33|34|40|41|42|43|44|";
+        std::cout << "                  |X0|X0|X0|X0|X0|X1|X1|X1|X1|X1|X2|X2|X2|X2|X2|X3|X3|X3|X3|X3|X4|X4|X4|X4|X4|";
+        std::cout << std::endl;
+        std::cout << "                  |Y0|Y1|Y2|Y3|Y4|Y0|Y1|Y2|Y3|Y4|Y0|Y1|Y2|Y3|Y4|Y0|Y1|Y2|Y3|Y4|Y0|Y1|Y2|Y3|Y4|";
+        std::cout << std::endl;
+        std::cout << "__________________|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|";
+        
+        for (unsigned int z = 0; z < 10; z++) {
+            std::cout << std::endl << "TEST EBENE " << z + 1;
+            if (z < 9) { std::cout << "  |Z0"<< z <<"|"; }
+            else{ std::cout << " |Z0" << z << "|"; }
+            for (unsigned int y = 0; y < mine.size(); y++) {
+                for (unsigned int x = 0; x < mine.size(); x++) {
+                    std::cout<<" "<< this->mine[x][y][z] <<"|";
+                }
+                //std::cout << std::endl;
+            }
+            //std::cout << std::endl;
         }
         std::cout << std::endl;
-    }
+        std::cout << "----------------------------------------------------------------------------------------------";
 
+
+    }
+    else {
+        for (unsigned int z = 0; z < 10; z++) {
+            std::cout << "EBENE" << z + 1 << std::endl;
+            for (unsigned int y = 0; y < mine.size(); y++) {
+                for (unsigned int x = 0; x < mine.size(); x++) {
+                    std::cout << this->mine[x][y][z];
+                }
+                std::cout << std::endl;
+            }
+            std::cout << std::endl;
+        }
+
+    }
 }
 int Field::rand1_9() {
     return rand() % 9 + 1;
 }
+
 void Field::setField(int x, int y, int z, int value)
 {
     this->mine[x][y][z] = value;

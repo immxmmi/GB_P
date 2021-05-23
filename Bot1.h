@@ -14,6 +14,8 @@ public:
     Bot1();
     ~Bot1();
     void mining(Field& field);
-    void sort(Field& field);
+    void sort(Field& field,bool TEST);
+
+    friend class UnitTest;
 };
 

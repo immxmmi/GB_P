@@ -2,7 +2,7 @@
 
 Bot4::Bot4()
 {
-	this->name = "BOT4";
+	this->name = "EVEN_BOT";
 }
 
 Bot4::~Bot4()

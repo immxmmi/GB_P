@@ -2,7 +2,7 @@
 
 Bot5::Bot5()
 {
-	this->name = "BOT5";
+	this->name = "NORMAL_BOT";
 }
 
 Bot5::~Bot5()

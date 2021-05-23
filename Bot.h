@@ -31,5 +31,7 @@ public:
 	virtual void collect(Field& field);
 	int rand1_4();
 	int rand1_5();
+
+	friend class UnitTest;
 };
 

@@ -6,10 +6,10 @@ class GAME
 {
 private:
 	int LIMIT;
-protected:
-public:
 	int BOT_COUNTER;
 	static Bot* BOTS[5];
+protected:
+public:
 	
 
 	void playGame();
@@ -19,6 +19,8 @@ public:
 	void BOT_MENU();
 	int get_NUMBER_1_5();
 	void choose_BOT(bool TEST);
+
+	friend class UnitTest;
 
 };
 

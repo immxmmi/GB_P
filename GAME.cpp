@@ -8,6 +8,7 @@
 #include <memory>
 #include <thread>
 #include <mutex>
+#include <stdexcept>
 
 
 
@@ -30,7 +31,7 @@ void GAME::playGame()
 
 	this->LIMIT = field.sum;
 	std::cout << this->LIMIT<<std::endl;
-	field.drawField();
+	field.drawField(false);
 
 		std::thread Core1(&Bot::play, BOTS[0], std::ref(field));
 		std::thread Core2(&Bot::play,BOTS[1],std::ref(field));
@@ -46,7 +47,7 @@ void GAME::playGame()
 		
 		
 		
-		field.drawField();
+		field.drawField(true);
 		std::cout<<"ENDE::" <<field.sum<<std::endl;
 		std::cout<< std::endl<< std::endl<< std::endl;
 		std::cout<<"NAME::" << BOTS[0]->name <<std::endl;
@@ -85,16 +86,28 @@ void GAME::GAME_BOT()
 //UNIT CHECK 
 void GAME::BOT_MENU() {
 
+	Bot* bot_name1 = new Bot1();
+	Bot* bot_name2 = new Bot1();
+	Bot* bot_name3 = new Bot1();
+	Bot* bot_name4 = new Bot1();
+	Bot* bot_name5 = new Bot1();
+
 	std::cout << "________________________________" << std::endl << std::endl;
 	std::cout << "|--------------MENU-------------|" << std::endl;
 	std::cout << "________________________________" << std::endl;
-	std::cout << "1.BOT1.................SORTBOT2000" << std::endl;
-	std::cout << "2.BOT2.................SORTBOT3000" << std::endl;
-	std::cout << "3.BOT3.................SORTBOT4000" << std::endl;
-	std::cout << "4.BOT4.................SORTBOT5000" << std::endl;
-	std::cout << "5.BOT5.................SORTBOT6000" << std::endl;
+	std::cout << "1.BOT1................." << bot_name1->name<< std::endl;
+	std::cout << "2.BOT2................." << bot_name2->name << std::endl;
+	std::cout << "3.BOT3................." << bot_name3->name << std::endl;
+	std::cout << "4.BOT4................." << bot_name4->name << std::endl;
+	std::cout << "5.BOT5................." << bot_name5->name << std::endl;
 	std::cout << std::endl << std::endl;
 	std::cout << std::endl << std::endl;
+
+	delete(bot_name1);
+	delete(bot_name2);
+	delete(bot_name3);
+	delete(bot_name4);
+	delete(bot_name5);
 }
 void GAME::choose_BOT(bool TEST)
 {
@@ -114,11 +127,11 @@ void GAME::choose_BOT(bool TEST)
 			this->BOT_MENU();
 			switch (this->get_NUMBER_1_5())
 			{
-				case 1: {std::cout << "Roboter 1" << std::endl; Bot* bot_1 = new Bot1(); this->BOTS[this->BOT_COUNTER] = bot_1; this->BOT_COUNTER++; break;}
-				case 2: {std::cout << "Roboter 2" << std::endl; Bot* bot_2 = new Bot2(); this->BOTS[this->BOT_COUNTER] = bot_2; this->BOT_COUNTER++; break;}
-				case 3: {std::cout << "Roboter 3" << std::endl; Bot* bot_3 = new Bot3(); this->BOTS[this->BOT_COUNTER] = bot_3; this->BOT_COUNTER++; break;}
-				case 4: {std::cout << "Roboter 4" << std::endl; Bot* bot_4 = new Bot4(); this->BOTS[this->BOT_COUNTER] = bot_4; this->BOT_COUNTER++; break;}
-				case 5: {std::cout << "Roboter 5" << std::endl; Bot* bot_5 = new Bot5(); this->BOTS[this->BOT_COUNTER] = bot_5; this->BOT_COUNTER++; break;}
+				case 1: {Bot* bot_1 = new Bot1(); std::cout << bot_1->name << std::endl; this->BOTS[this->BOT_COUNTER] = bot_1; this->BOT_COUNTER++; break;}
+				case 2: {Bot* bot_2 = new Bot2(); std::cout << bot_2->name << std::endl;  this->BOTS[this->BOT_COUNTER] = bot_2; this->BOT_COUNTER++; break;}
+				case 3: {Bot* bot_3 = new Bot3(); std::cout << bot_3->name << std::endl;  this->BOTS[this->BOT_COUNTER] = bot_3; this->BOT_COUNTER++; break;}
+				case 4: {Bot* bot_4 = new Bot4(); std::cout << bot_4->name << std::endl;  this->BOTS[this->BOT_COUNTER] = bot_4; this->BOT_COUNTER++; break;}
+				case 5: {Bot* bot_5 = new Bot5(); std::cout << bot_5->name << std::endl;  this->BOTS[this->BOT_COUNTER] = bot_5; this->BOT_COUNTER++; break;}
 			}
 		}
 	} while (this->BOT_COUNTER < 5);
@@ -139,6 +152,7 @@ int GAME::get_NUMBER_1_5() {
 		if (std::cin.fail() || (input != 1 && input != 2 && input != 3 && input != 4 && input != 5)) {
 			std::cin.clear();
 			std::cin.ignore();
+			//throw invalid_argument("Input failed");
 			std::cout << "Invalid" << std::endl;
 		}
 	} while (input != 1 && input != 2 && input != 3 && input != 4 && input != 5);

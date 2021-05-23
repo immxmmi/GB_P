@@ -174,7 +174,7 @@ void UnitTest::TEST_FIELD(){
 	assert(testField->rand1_9() < 10 && "random Zahl ist größer als 9");
 	std::cout << "--> true" << std::endl;
 	this->counter++;
-	assert(testField->rand1_9() >= 0 && "random Zahl ist kleiner als 0");
+	assert(testField->rand1_9() >= 0 && "ransetFullField(true);dom Zahl ist kleiner als 0");
 	std::cout << "--> true" << std::endl;
 	this->counter++;
 	assert(testField->rand1_9() >= 0 && "random Zahl ist kleiner als 0");

@@ -2,7 +2,7 @@
 
 Bot3::Bot3()
 {
-	this->name = "BOT3";
+	this->name = "ODD_BOT1000";
 }
 
 Bot3::~Bot3()

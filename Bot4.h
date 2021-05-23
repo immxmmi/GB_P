@@ -9,5 +9,7 @@ public:
     Bot4();
     ~Bot4();
     void mining(Field& field);
+
+    friend class UnitTest;
 };
 
