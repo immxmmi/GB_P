@@ -44,7 +44,7 @@ void Field::drawField(bool TEST)
         }
         std::cout << std::endl;
         std::cout << "----------------------------------------------------------------------------------------------";
-
+        std::cout << std::endl;
 
     }
     else {
@@ -64,7 +64,6 @@ void Field::drawField(bool TEST)
 int Field::rand1_9() {
     return rand() % 9 + 1;
 }
-
 void Field::setField(int x, int y, int z, int value)
 {
     this->mine[x][y][z] = value;

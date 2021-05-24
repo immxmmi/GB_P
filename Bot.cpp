@@ -7,8 +7,8 @@ std::mutex miningX;
 
 Bot::Bot() {
 	this->setXY(this->rand1_5(), this->rand1_5());
-	this->time = 0;
-	this->score = 0;
+	this->time = 000;
+	this->score = 0000;
 }
 Bot::~Bot() {
 }

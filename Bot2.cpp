@@ -4,7 +4,7 @@
 
 Bot2::Bot2()
 {
-	this->name = "REVERS_BOT_2000";
+	this->name = "REVERS_BOT_20";
 }
 
 Bot2::~Bot2()

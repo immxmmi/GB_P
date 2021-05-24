@@ -20,6 +20,8 @@ private:
 	//Feld einfügen an einer Bestimmten stelle
 	void setField(int x, int y, int z, int value);
 
+	// ZEICHNET DIE GANZEN FELDER AUF
+	void drawField(bool TEST);
 
 protected:
 
@@ -32,8 +34,6 @@ public:
 	Field();
 	//Destructor
 	~Field();
-	// ZEICHNET DIE GANZEN FELDER AUF
-	void drawField(bool TEST);
 
 
  

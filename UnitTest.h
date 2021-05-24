@@ -14,17 +14,20 @@ private:
 	int rand1_10();
 	int rand1_15();
 	int counter;
+	int hardness;
+	int setHardness();
+	void HARD_MENU();
+	void TEST_UNITTEST(bool SHOW);
+	void TEST_FIELD(bool SHOW);
+	void TEST_BOT(bool SHOW);
+	void TEST_GAME(bool SHOW);
+	void TEST(bool SHOW);
 protected:
 
 public:
 	UnitTest();
 	~UnitTest();
-	void TEST_UNITTEST();
-	void TEST_FIELD();
-	void TEST_BOT(); 
-	void TEST_GAME();
-	void TEST();
-
+	void testMENU(int input);
 
 };
 
