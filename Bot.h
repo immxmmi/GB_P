@@ -29,7 +29,7 @@ public:
 	void play(Field& field);
 
 	virtual void mining(Field& field) = 0;
-    void collect(Field& field);
+    virtual void collect(Field& field);
 	friend class UnitTest;
 };
 

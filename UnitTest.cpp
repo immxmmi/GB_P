@@ -395,10 +395,6 @@ void UnitTest::TEST_BOT(bool SHOW)
 
 
 
-
-
-
-
 	if (SHOW) {
 		std::cout << ".....create TEST BOT2" << std::endl;
 	}
@@ -482,6 +478,79 @@ void UnitTest::TEST_BOT(bool SHOW)
 
 
 
+
+	//REVERS CHECK
+
+	for (int i = 0; i <= 0 + this->hardness; i++) {
+
+		if (SHOW) {
+			std::cout << "REVERS CHECK: " << std::endl;
+			std::cout << "... create a new TEST FIELD" << std::endl;
+		}
+		testField.setFullField(false);
+
+
+		testBot2->sort(testField, true);
+		if (SHOW) {
+			std::cout << "SORT: " << std::endl;
+			testField.drawField(true);
+		}
+
+		for (int i = 0; i <= 3; i++) {
+			int x = this->rand1_4();
+			int y = this->rand1_4();
+			int sort = std::is_sorted(std::begin(testField.mine[x][y]), std::end(testField.mine[x][y]));
+			assert(sort == 1 && "Sortiert");
+			if (SHOW) { std::cout << "--> true" << std::endl; }
+			this->counter++;
+		}
+
+
+		testBot2->reverse(testField, true);
+
+		if (SHOW) {
+			std::cout << "REVERS: " << std::endl;
+			testField.drawField(true);
+		}
+
+
+		if (SHOW) {
+			std::cout << "UNSORT: " << std::endl;
+			testField.drawField(true);
+		}
+
+		for (int i = 0; i <= 3; i++) {
+			int x = this->rand1_4();
+			int y = this->rand1_4();
+			int sort = std::is_sorted(std::begin(testField.mine[x][y]), std::end(testField.mine[x][y]));
+			assert(sort == 0 && "nicht Sortiert");
+			if (SHOW) { std::cout << "--> true" << std::endl; }
+			this->counter++;
+		}
+
+
+		testBot2->reverse(testField, true);
+
+		if (SHOW) {
+			std::cout << "2x REVERS: " << std::endl;
+			testField.drawField(true);
+		}
+
+		if (SHOW) {
+			std::cout << "SORT: " << std::endl;
+			testField.drawField(true);
+		}
+
+		for (int i = 0; i <= 3; i++) {
+			int x = this->rand1_4();
+			int y = this->rand1_4();
+			int sort = std::is_sorted(std::begin(testField.mine[x][y]), std::end(testField.mine[x][y]));
+			assert(sort == 1 && "Sortiert");
+			if (SHOW) { std::cout << "--> true" << std::endl; }
+			this->counter++;
+		}
+
+	}
 
 
 

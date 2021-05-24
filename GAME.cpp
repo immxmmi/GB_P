@@ -38,7 +38,10 @@ void GAME::playGame()
 	this->choose_BOT(false);
 	this->LIMIT = field.sum;
 	
-	//field.drawField(true);
+
+	    field.drawField(true);
+		std:: cout <<"START SUM:" << field.sum;
+		
 		std::thread Core1(&Bot::play, BOTS[0], std::ref(field));
 		std::thread Core2(&Bot::play,BOTS[1],std::ref(field));
 		std::thread Core3(&Bot::play,BOTS[2],std::ref(field));
@@ -111,6 +114,8 @@ void GAME::playGame()
 			}
 			std::cout << "        ##########################################" << std::endl;
 		}
+
+		std::cout << "END SUM:" << field.sum;
 }
 
 

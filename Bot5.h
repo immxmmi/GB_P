@@ -10,6 +10,8 @@ public:
     ~Bot5();
     void mining(Field& field);
 
+    void collect(Field& field);
+
     friend class UnitTest;
 };
 
