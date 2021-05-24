@@ -8,6 +8,7 @@
 #include "Bot5.h"
 #include "GAME.h"
 #include <iostream>
+#include <algorithm> 
 
 
 
@@ -108,22 +109,29 @@ void UnitTest::TEST_FIELD(bool SHOW){
 	}
 
 	Field* testField = new Field();
+	if (SHOW) {
+		testField->drawField(true);
+	}
 
 	//SET RANDOM FELD + VALUE 
 	if (SHOW) {
 		std::cout << std::endl << "TEST SET RANDOM FIELD --> VALUE:  " << std::endl;
 	}
+
+
 	for (int i = 0; i <= this->hardness; i++) {
 		int x = this->rand1_4();
 		int y = this->rand1_4();
 		int z = this->rand1_9();
 		int value = this->rand1_9();
 		testField->setField(x, y, z, value);
+		if (SHOW) {
+			testField->drawField(true);
+		}
 		assert(testField->mine[x][y][z] == value && "TEST setFIELD");
 		if (SHOW) {
-			std::cout << "Feld [" << x << "][" << y << "][" << z << "]=" << value << "--> true" << std::endl;
+			std::cout << "Feld [" << x << "][" << y << "][" << z+1 << "]=" << value << "--> true" << std::endl;
 		}
-		testField->drawField(true);
 		this->counter++;
 	}
 
@@ -150,19 +158,28 @@ void UnitTest::TEST_FIELD(bool SHOW){
 	if (SHOW) {
 		std::cout << std::endl << "RANDOM: " << std::endl;
 	}
-	for (int i = 0; i < 6 + hardness; i++) {
-		assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] >= 0 && "Vector TEST Feld X/Y/Z");
-		if (SHOW) {
-			std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
-		}
-		this->counter++;
-		assert(testField->mine[this->rand1_4()][this->rand1_4()][this->rand1_9()] < 10 && "Vector TEST Feld X/Y/Z");
-		if (SHOW) {
-			std::cout << "Feld [X][Y][Z] " << "--> true" << std::endl;
-		}
-		this->counter++;
-
+		testField->setFullField(false);
+	if (SHOW) {
 		testField->drawField(true);
+	}
+	for (int i = 0; i < 6 + hardness; i++) {
+
+		int x = this->rand1_4();
+		int y = this->rand1_4();
+		int z = this->rand1_9();
+
+
+		assert(testField->mine[x][y][z] >= 0 && "Vector TEST Feld X/Y/Z");
+		if (SHOW) {
+			std::cout << "Feld ["<< x <<"]["<< y <<"]["<< z+1 <<"] = " << testField->mine[x][y][z] << "--> true" << std::endl;
+		}
+		this->counter++;
+		if (SHOW) {
+			assert(testField->mine[x][y][z] < 10 && "Vector TEST Feld X/Y/Z");
+			std::cout << "Feld [" << x << "][" << y << "][" << z+1 << "] = " << testField->mine[x][y][z] << "--> true" << std::endl;
+
+		}
+		this->counter++;
 	}
 
 
@@ -225,12 +242,18 @@ void UnitTest::TEST_FIELD(bool SHOW){
 		std::cout << "SUM -- SCORE TEST" << std::endl;
 	}
 	testField->setFullField(true);
+	if (SHOW) {
+	testField->drawField(true);
+	}
 	assert(testField->sum == 250 && "SUMME ist nicht KORREKT");
-	if (SHOW) { std::cout << "--> true" << std::endl; }
+	if (SHOW) { std::cout << "250 --> true" << std::endl; }
 	this->counter++;
 
 	for (int i = 0; i < 3 + hardness; i++) {
 		testField->setFullField(false);
+	if (SHOW) {
+		testField->drawField(true);
+	}
 		assert(testField->sum < 2251 && "SUMME ist größer als das MAXIMUM");
 		if (SHOW) { std::cout << "--> true" << std::endl; }
 		this->counter++;
@@ -327,6 +350,55 @@ void UnitTest::TEST_BOT(bool SHOW)
 	}
 
 
+	//SORT CHECK
+
+	for (int i = 0; i <= 0 + this->hardness; i++) {
+
+	if (SHOW) {
+		std::cout << "SORT CHECK: " << std::endl;
+		std::cout << "... create a new TEST FIELD" << std::endl;
+	}
+	testField.setFullField(false);
+	if(SHOW){
+		std::cout << "UNSORT: " << std::endl;
+		testField.drawField(true);
+	}
+
+	for (int i = 0; i <= 3; i++) {
+		int x = this->rand1_4();
+		int y = this->rand1_4();
+		int sort = std::is_sorted(std::begin(testField.mine[x][y]), std::end(testField.mine[x][y]));
+		assert(sort == 0 && "nicht Sortiert");
+		if (SHOW) { std::cout << "--> true" << std::endl; }
+		this->counter++;
+	}
+
+	testBot1->sort(testField, true);
+
+	if(SHOW){
+		std::cout << "SORT: " << std::endl;
+		testField.drawField(true);
+	}
+}
+	for (int i = 0; i <= 3; i++) {
+		int x = this->rand1_4();
+		int y = this->rand1_4();
+		int sort = std::is_sorted(std::begin(testField.mine[x][y]), std::end(testField.mine[x][y]));
+		assert(sort == 1 && "Sortiert");
+		if (SHOW) { std::cout << "--> true" << std::endl; }
+		this->counter++;
+	}
+
+
+
+
+
+
+
+
+
+
+
 	if (SHOW) {
 		std::cout << ".....create TEST BOT2" << std::endl;
 	}
@@ -365,6 +437,52 @@ void UnitTest::TEST_BOT(bool SHOW)
 	assert(testBot2->y == 2 && "TEST : Y = 2");
 	if (SHOW) { std::cout << "--> true" << std::endl; }
 	this->counter++;
+
+
+
+	//SORT CHECK
+
+	for (int i = 0; i <= 0 + this->hardness; i++) {
+
+		if (SHOW) {
+			std::cout << "SORT CHECK: " << std::endl;
+			std::cout << "... create a new TEST FIELD" << std::endl;
+		}
+		testField.setFullField(false);
+		if (SHOW) {
+			std::cout << "UNSORT: " << std::endl;
+			testField.drawField(true);
+		}
+
+		for (int i = 0; i <= 3; i++) {
+			int x = this->rand1_4();
+			int y = this->rand1_4();
+			int sort = std::is_sorted(std::begin(testField.mine[x][y]), std::end(testField.mine[x][y]));
+			assert(sort == 0 && "nicht Sortiert");
+			if (SHOW) { std::cout << "--> true" << std::endl; }
+			this->counter++;
+		}
+
+		testBot2->sort(testField, true);
+
+		if (SHOW) {
+			std::cout << "SORT: " << std::endl;
+			testField.drawField(true);
+		}
+
+		for (int i = 0; i <= 3; i++) {
+			int x = this->rand1_4();
+			int y = this->rand1_4();
+			int sort = std::is_sorted(std::begin(testField.mine[x][y]), std::end(testField.mine[x][y]));
+			assert(sort == 1 && "Sortiert");
+			if (SHOW) { std::cout << "--> true" << std::endl; }
+			this->counter++;
+		}
+	}
+
+
+
+
 
 
 	if (SHOW) {
@@ -488,6 +606,15 @@ void UnitTest::TEST_BOT(bool SHOW)
 	assert(testBot5->y == 2 && "TEST : Y = 2");
 	if (SHOW) { std::cout << "--> true" << std::endl; }
 	this->counter++;
+
+
+
+
+
+
+
+
+
 
 
 	// DELETE

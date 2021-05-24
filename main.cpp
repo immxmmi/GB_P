@@ -9,6 +9,9 @@
 
 int main() {
 	GAME game;
+	Bot1 bot;
+
+
 
 	game.start();
 	game.~GAME();

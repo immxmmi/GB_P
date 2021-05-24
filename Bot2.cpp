@@ -21,8 +21,8 @@ void Bot2::mining(Field& field)
 void Bot2::reverse(Field& field,bool TEST) {
     if (TEST) {
         if (TEST) {
-            for (int x = 0; x < 4; x++) {
-                for (int y = 0; y < 4; y++) {
+            for (int x = 0; x < 5; x++) {
+                for (int y = 0; y < 5; y++) {
                     std::reverse(field.mine[x][y].begin(), field.mine[x][y].end());
                 }
             }
@@ -38,8 +38,8 @@ void Bot2::sort(Field& field, bool TEST) {
 
         if (TEST) {
 
-            for (int x = 0; x < 4; x++) {
-                for (int y = 0; y < 4; y++) {
+            for (int x = 0; x < 5; x++) {
+                for (int y = 0; y < 5; y++) {
                     std::sort(field.mine[x][y].begin(), field.mine[x][y].end());
                 }
             }

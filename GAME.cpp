@@ -181,9 +181,12 @@ void GAME::start() {
 	int input = gameMenu();
 
 	test.testMENU(input);
+	test.~UnitTest();
+
 	if (input == 1) {
 		this->playGame();
 	}
+
 }
 
 
