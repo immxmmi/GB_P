@@ -128,7 +128,8 @@ void UnitTest::TEST_FIELD(bool SHOW){
 		if (SHOW) {
 			testField->drawField(true);
 		}
-		assert(testField->mine[x][y][z] == value && "TEST setFIELD");
+
+
 		if (SHOW) {
 			std::cout << "Feld [" << x << "][" << y << "][" << z+1 << "]=" << value << "--> true" << std::endl;
 		}
@@ -595,10 +596,56 @@ void UnitTest::TEST_BOT(bool SHOW)
 	if (SHOW) { std::cout << "--> true" << std::endl; }
 	this->counter++;
 
+
+	testField.setFullField(false);
+
+	// SAMMELT nur UNGERADE ZAHLEN
+
+	if (SHOW) {
+		std::cout << "COL && UNG BOT3 " << std::endl;
+	}
+
+	for (int i = 0; i <= 3 + this->hardness; i++) {
+		int x = this->rand1_4();
+		int y = this->rand1_4();
+
+		if (SHOW) {
+			testField.drawField(true);
+		}
+
+		testBot3->collect(testField, true, x, y);
+
+		for (int z = 0; z < 10; z++) {
+			assert(testField.mine[x][y][z]%2 == 0 && "TEST col 3");	
+		if (SHOW) {
+			std::cout << "Feld [" << x << "][" << y << "][" << z + 1 << "]" << "--> true" << std::endl;
+			std::cout << "--> true" << std::endl;
+			}
+		}
+
+		if (SHOW) {
+			testField.drawField(true);
+		}	
+	}
+
+
+
+
+
+
+
+
+
 	if (SHOW) {
 		std::cout << ".....create TEST BOT4" << std::endl;
 	}
 	Bot4* testBot4 = new Bot4();
+
+
+	if (SHOW) {
+		testField.drawField(true);
+	}
+	
 	if (SHOW) {
 		std::cout << "STATUS CHECK BOT 4" << std::endl;
 	}
@@ -634,6 +681,52 @@ void UnitTest::TEST_BOT(bool SHOW)
 	assert(testBot4->y == 2 && "TEST : Y = 2");
 	if (SHOW) { std::cout << "--> true" << std::endl; }
 	this->counter++;
+
+
+	// SAMMELT nur GERADE ZAHLEN
+	testField.setFullField(false);
+
+	if (SHOW) {
+		std::cout << "COL && GER BOT4 " << std::endl;
+	}
+
+	for (int i = 0; i <= 3 + this->hardness; i++) {
+		int x = this->rand1_4();
+		int y = this->rand1_4();
+
+		if (SHOW) {
+			testField.drawField(true);
+		}
+
+		testBot4->collect(testField, true, x, y);
+		if (SHOW) {
+			testField.drawField(true);
+		}
+
+		for (int z = 0; z < 10; z++) {
+			if (testField.mine[x][y][z] != 0) {
+				assert(testField.mine[x][y][z] % 2 != 0 && "TEST col 4");
+			}
+			if (SHOW) {
+				std::cout << "Feld [" << x << "][" << y << "][" << z + 1 << "]" << "--> true" << std::endl;
+				std::cout << "--> true" << std::endl;
+			}
+		}
+
+		if (SHOW) {
+			testField.drawField(true);
+		}
+	}
+
+
+
+
+
+
+
+
+
+
 
 	if (SHOW) {
 		std::cout << ".....create TEST BOT5" << std::endl;
@@ -675,6 +768,50 @@ void UnitTest::TEST_BOT(bool SHOW)
 	assert(testBot5->y == 2 && "TEST : Y = 2");
 	if (SHOW) { std::cout << "--> true" << std::endl; }
 	this->counter++;
+
+
+	// SAMMELT zahlen die größer als 9 sind und addiert die selbe zahl wenn sie unter 9 ist
+
+	if (SHOW) {
+		std::cout << "COL && UNG BOT5 " << std::endl;
+	}
+	testField.setFullField(false);
+
+	for (int i = 0; i <= 3 + this->hardness; i++) {
+		int x = this->rand1_4();
+		int y = this->rand1_4();	
+
+		if (SHOW) {
+			testField.drawField(true);
+		}
+
+		int a[10];
+		for (int z = 0; z < 10; z++) {
+			a[z] = testField.mine[x][y][z];
+		}
+		testBot5->collect(testField, true, x, y);
+
+		if (SHOW) {
+			testField.drawField(true);
+		}
+
+		for (int z = 0; z < 10; z++) {
+		
+			if (testField.mine[x][y][z] != 0) {
+				assert(testField.mine[x][y][z] == (a[z]*2) && "TEST col 5");
+			}
+
+			if (SHOW) {
+				std::cout << "Feld [" << x << "][" << y << "][" << z + 1 << "]" << "--> true" << std::endl;
+				std::cout << "--> true" << std::endl;
+			}
+			this->counter++;
+		}
+
+		if (SHOW) {
+			testField.drawField(true);
+		}
+	}
 
 
 

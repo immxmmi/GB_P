@@ -7,15 +7,13 @@ class Bot1 :
 {
 
 private:
-
+    void sort(Field& field,bool TEST);
 protected:
 
 public:
     Bot1();
     ~Bot1();
     void mining(Field& field);
-    void sort(Field& field,bool TEST);
-
     friend class UnitTest;
 };
 

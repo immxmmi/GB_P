@@ -2,6 +2,7 @@
 #include <mutex>
 #include <chrono>
 
+
 std::mutex miningX;
 
 
