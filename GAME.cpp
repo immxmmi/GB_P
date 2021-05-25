@@ -116,6 +116,7 @@ void GAME::playGame()
 		}
 
 		std::cout << "END SUM:" << field.sum;
+		field.drawField(true);
 }
 
 
